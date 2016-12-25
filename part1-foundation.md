@@ -26,7 +26,7 @@
 > 2. 介绍一种更基础的类型：数组 与 多维数组！但更推荐使用标准库提供的类型`string`和`vector`。
 
 ## 
-### CH4 表达式
+### CH4 表达式 [read_note](./CH4_Expression/CH4_Expression.md)
 
 ## 
 ### CH5 语句

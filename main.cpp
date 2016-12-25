@@ -3,6 +3,7 @@
 #include "CH2_Variables_BasicTypes/const_file1.h"
 #include "CH2_Variables_BasicTypes/const_file2.h"
 #include "CH3_String_Vector_Arrays/string_my.h"
+#include "CH4_Expression/operation_my.h"
 
 using namespace std;
 
@@ -21,7 +22,9 @@ int main() {
 //    const_file1();
 //    const_file2();
 
-    my_string();
+//    my_string();
+
+    my_operation();
 
     return 0;
 }
