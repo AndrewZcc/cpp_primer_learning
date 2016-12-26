@@ -27,17 +27,21 @@
 
 ## 
 ### CH4 表达式 [read_note](./CH4_Expression/CH4_Expression.md)
+> 本章主要介绍了：  
+> 1. C++ 自带的运算符 及其上的 操作；(注意：`sizeof()`运算符)  
+> 2. 总结了 C++运算过程中的两类类型转换：`隐式类型转换` 与 `显式类型转换`。
 
 ## 
-### CH5 语句
+### CH5 语句 [read_note](./CH5_Statement/CH5_Statement.md)
+> 本章致力于介绍：C++所提供的 一组`控制流(flow-of-control)语句` 以支持复杂的执行路径！
 
 ## 
-### CH6 函数 <small>// 用于定义可供随时调用的计算单元</small>
+### CH6 函数 <small> [read_note](./CH5_Statement/CH6_Function.md) // 用于定义可供随时调用的计算单元</small>
 > Q: 函数存在的意义是什么？  
 > A: 用于 <font color="blue">让用户可以定义可供随时调用的计算单元！</font>
 
 ## 
-### CH7 类 <small>// 用于能让用户 自主定义 使用上像内置类型一样自然的 类 类型 </small>
+### CH7 类 <small> [read_note](./CH5_Statement/CH7_Class.md) // 用于能让用户 自主定义 使用上像内置类型一样自然的 类 类型 </small>
 > Q: 类的存在 是为了什么？类的设计初衷是什么？  
 > A: 是为了 让用户能具备进行数据结构的自定义 的能力，<font color="blue">让用户具备能按照自己的想法自主设计数据类型的能力！</font>
 

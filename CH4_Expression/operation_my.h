@@ -25,12 +25,12 @@ void my_operation()
          << ", a/b = " << sizeof(x)/sizeof(x[0]) << endl;   // ok
     cout << "a: sizeof(p) = " << sizeof(p) << ", b: sizeof(*p) = " << sizeof(*p)
          << ", a/b = " << sizeof(p)/sizeof(*p) << endl;     // error 注意: 这里 p 不是数组了, 而是指针 int*, 占8个字节大小
-    // 这也是为什么 C++ 写函数传递数组时, 为什么同时要求传递一个数组长度(len) 的原因!
+    // 这也是为什么 C++ 写函数传递数组时, 为什么同时要求传递一个数组长度(length) 的原因!
     int a = 1, b = 2;
     int res = sizeof a + b;
-    cout << "sizeof a + b = " << res << endl;
+    cout << "sizeof a + b = " << res << endl;       // 6
     res = sizeof (a + b);
-    cout << "sizeof (a + b) = " << res << endl;
+    cout << "sizeof (a + b) = " << res << endl;     // 4
 }
 
 #endif //CPP_PRIMER_OPERATION_MY_H
