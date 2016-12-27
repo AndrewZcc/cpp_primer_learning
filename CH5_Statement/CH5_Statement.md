@@ -1,8 +1,9 @@
 ### CH5 语句
 ## 
-> 本章致力于介绍：C++所提供的 一组控制流(flow-of-control)语句 以支持复杂的执行路径！
-## 
+> - 本章致力于介绍：C++所提供的 一组控制流(flow-of-control)语句 以支持复杂的执行路径！  
+> - 本章介绍的主要包括：简单语句，复合语句(语句块)，条件语句，循环语句，跳转语句，异常处理机制 等。
 
+## 
 #### 5.1 简单语句
 1. 注意：别漏写分号，也别多写分号；
 2. 用一对花括号括起来的语句，被称作语句块，也就是所谓的 `复合语句`，我们可以把 `复合语句`看做是一条语句，但是这条语句并不需要以分号作为结束。
@@ -47,13 +48,59 @@
 4. `do while` 循环
 	- `do while` 与 `while` 唯一的区别就在于：其先执行循环体，后检查条件！
 	- 注意另一个重要的区别：<font color="red">do while 语句要在结束位置使用一个分号作为结尾</font>！
-	
-5. 
 
 #### 5.5 跳转语句 (用于中断当前控制流)
 
+1. 跳转语句的作用是：中断当前的执行过程！
+
+2. `break` 语句
+	- break 语句 只能出现在 迭代语句 或 switch语句 内部，它的作用也仅限于：离他最近的循环或者是switch。
+	
+3. `continue` 语句
+	- 作用是：终止最近的循环中的当前迭代，并立即开始下一次迭代！
+	
+4. `goto` 语句
+	- 建议：虽然 C++语言中支持`goto 语句` (无条件跳转)，**但请不要在程序中使用它，因为它使得程序既难以理解又难以修改**！
+
+5. `return` 语句【详见 6.3】
+
 #### 5.6 try 语句 与 异常处理
 
+1. 异常是指存在于运行时的反常行为！C++ 提供 `throw 表达式，try 语句块，一套异常类` 用来处理异常。
+
+2. `throw` 表达式
+	- 结合 异常类，抛出异常信息。 
+	
+	```
+	if (item1.isbn() != item2.isbn())
+		throw runtime_error("Data must refer to same ISBN.");
+	```
+	
+3. `try` 语句块
+	- 用法：
+	
+	```
+	int x;
+	try {
+		// program-statements
+		x = 2;
+		int y = 3;
+		throw exception;
+	} catch (exception-declaration){
+		// handler-statements
+		cout << x << endl;	// ✅
+		cout << y << endl;	// ❌
+	} catch (exception-decla2) {
+		handler-statements
+	} ...
+	
+	cout << x << endl;		// ✅
+	cout << y << endl;		// ❌
+	```
+	- 特别注意：*try 语句块内声明的变量在块外部是无法访问的，而且甚至是在 catch子句内也无法访问*。
+	
+4. `标准库 异常类 #include <exception>`
+	- 每个标准异常类 都定义了名为 what() 的成员函数，这些函数没有参数，返回的则是C风格字符串。
 
 ## 
 END [Back](../part1-foundation.md)

@@ -4,6 +4,8 @@
 #include "CH2_Variables_BasicTypes/const_file2.h"
 #include "CH3_String_Vector_Arrays/string_my.h"
 #include "CH4_Expression/operation_my.h"
+#include "CH5_Statement/exception_my.h"
+#include "CH6_Function/separate_compile.h"
 
 using namespace std;
 
@@ -24,7 +26,10 @@ int main() {
 
 //    my_string();
 
-    my_operation();
+//    my_operation();
+
+//    my_exception();
+    cout << "CH6-separate_compile: add(int,int) func: " << add(3, 5) << endl;
 
     return 0;
 }

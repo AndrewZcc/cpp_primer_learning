@@ -9,7 +9,7 @@
 > 1、**C++ 11 带来的一个很实用的关键字：`auto`**, 当我们弄不清楚一个东西具体是什么类型的时候，我们可以让编译器替我们去分析这个表达式到底是什么类型。<font color="red">`auto` 可以让编译器通过初始值来推算变量的类型！但也因此当你使用它定义变量的时候，必须提供初值！</font>
 
 ## 
-### CH2 变量和基本类型 [read_note](./CH2_Variables_BasicTypes/CH2_variables_basicTypes.md)
+### CH2 变量和基本类型 <small>[read_note](./CH2_Variables_BasicTypes/CH2_variables_basicTypes.md)</small>
 > 本章致力于介绍：  
 > 1. C++ 所提供的基本数据类型，符合类型 (类型转换，引用，指针，const, 类型别名等)；  
 > 2. 介绍它所提供的自定义数据类型的机制。
@@ -20,23 +20,24 @@
 * C++ 允许用户以类的形式自定义类型！
 
 ## 
-### CH3 字符串、向量和数组 [read_note](./CH3_String_Vector_Arrays/CH3_String_Vector_Arrays.md)
+### CH3 字符串、向量和数组 <small>[read_note](./CH3_String_Vector_Arrays/CH3_String_Vector_Arrays.md)</small>
 > 本章致力于介绍：  
 > 1. C++ 语言提供的两种最重要的 标准库类型：`string`, `vector`。前者可表示可变长的字符串，后者则可表示可变长的数组；  
 > 2. 介绍一种更基础的类型：数组 与 多维数组！但更推荐使用标准库提供的类型`string`和`vector`。
 
 ## 
-### CH4 表达式 [read_note](./CH4_Expression/CH4_Expression.md)
+### CH4 表达式 <small>[read_note](./CH4_Expression/CH4_Expression.md)</small>
 > 本章主要介绍了：  
 > 1. C++ 自带的运算符 及其上的 操作；(注意：`sizeof()`运算符)  
 > 2. 总结了 C++运算过程中的两类类型转换：`隐式类型转换` 与 `显式类型转换`。
 
 ## 
-### CH5 语句 [read_note](./CH5_Statement/CH5_Statement.md)
-> 本章致力于介绍：C++所提供的 一组`控制流(flow-of-control)语句` 以支持复杂的执行路径！
+### CH5 语句 <small>[read_note](./CH5_Statement/CH5_Statement.md)</small>
+> 本章致力于介绍：C++所提供的 一组`控制流(flow-of-control)语句` 以支持复杂的执行路径！  
+> 本章介绍的主要包括：简单语句，复合语句(语句块)，条件语句，循环语句，跳转语句，异常处理机制 等。
 
 ## 
-### CH6 函数 <small> [read_note](./CH5_Statement/CH6_Function.md) // 用于定义可供随时调用的计算单元</small>
+### CH6 函数 <small> [read_note](./CH6_Function/CH6_Function.md) // 用于定义可供随时调用的计算单元</small>
 > Q: 函数存在的意义是什么？  
 > A: 用于 <font color="blue">让用户可以定义可供随时调用的计算单元！</font>
 
