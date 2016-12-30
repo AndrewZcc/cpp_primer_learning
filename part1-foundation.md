@@ -42,7 +42,7 @@
 > A: 用于 <font color="blue">让用户可以定义可供随时调用的计算单元！</font>
 
 ## 
-### CH7 类 <small> [read_note](./CH5_Statement/CH7_Class.md) // 用于能让用户 自主定义 使用上像内置类型一样自然的 类 类型 </small>
+### CH7 类 <small> [read_note](./CH7_Class/CH7_Class.md) // 用于能让用户 自主定义 使用上像内置类型一样自然的 类 类型 </small>
 > Q: 类的存在 是为了什么？类的设计初衷是什么？  
 > A: 是为了 让用户能具备进行数据结构的自定义 的能力，<font color="blue">让用户具备能按照自己的想法自主设计数据类型的能力！</font>
 
