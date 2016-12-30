@@ -1,0 +1,639 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>CH2 变量和基本类型</title>
+
+</head>
+<body>
+<h3>CH2 变量和基本类型</h3>
+
+<h2></h2>
+
+<blockquote><p>总结：<br/>
+1. extern 用于声明变量，而非定义变量；C++ 支持将变量的 声明和定义 分开！<br/>
+2. const 用于修饰常量，它是 编译时常量！也就是说在编译时该变量的值就会被常数替换掉！必须初始化，且值不允许再修改！</p>
+
+<h2></h2></blockquote>
+
+<h4>2.1 基本内置类型 与 类型转换</h4>
+
+<ol>
+<li><p>数据类型：程序的基础，定义了 数据的意义 及其上可执行的操作！</p></li>
+<li><p>C++ 的基本内置类型</p>
+
+<ul>
+<li><p><strong>算术类型</strong> (arithmetric type)</p>
+
+<ul>
+<li>整型 (integral type)<br/>
+(eg: char, bool, short, int, long, long long)
+
+<ul>
+<li>带符号类型 (signed): 最高位用作符号位 [-128, 127]</li>
+<li>无符号类型 (unsigned): 所有比特位都用来存储值 [0-255]</li>
+</ul>
+</li>
+<li>浮点型<br/>
+(eg: float, double, long double)</li>
+</ul>
+</li>
+<li><p><strong>空类型</strong> (void type)</p></li>
+</ul>
+
+
+<blockquote><p>建议：如何选择数据类型？<br/>
+1. 当明确知道数值不可能为负数时，选用 unsigned 类型；<br/>
+2. 使用 int 执行整数运算，如果数值超出了int的表示范围，建议直接选择 long long;<br/>
+3. 在算术表达式中，不要使用 char 或 bool 类型；<br/>
+4. 执行浮点数运算 首选 double, 这是因为它本身计算代价与float相差无几，甚至对于某些机器，双精度甚至比单精度更快。</p></blockquote></li>
+<li><p>类型转换 <a href="./CH2_Variables_BasicTypes/type_conversion.h">source_code</a></p>
+
+<ul>
+<li>❗️注意 <code>unsigned</code> 与 <code>signed</code> 之间的相互转化(关于符号位的不同理解)；</li>
+<li>❗️注意 <code>任何一种数据类型在计算机内部所占的位数</code> 对其本身所能表示的数据的范围的影响。</li>
+<li>❌ 切勿 <code>混用 signed与unsigned 类型</code>，因为带符号数会自动转换成无符号数从而产生异常结果。</li>
+</ul>
+
+
+<blockquote><p>联系：java 里面 <code>int</code>与<code>Integer</code> 的主要不同就在于 <code>Integer</code>是无符号的整型 ( Integer = unsigned int )。</p></blockquote></li>
+<li><p>字面值常量 (literal)</p>
+
+<ul>
+<li>整型和浮点型：十进制 20，八进制 024，十六进制，3.1415，3.14E0</li>
+<li>字符和字符串字面值：‘a’ | "Hello World!"</li>
+<li>转义序列：\n，\t，\0，\12(换行符)，\40(空格符)，\x4d(字符M)，\123，etc.</li>
+<li>布尔型字面值：true, false</li>
+<li>指针型字面值：nullptr</li>
+</ul>
+</li>
+</ol>
+
+
+<h2></h2>
+
+<h4>2.2 变量 及其 初始化</h4>
+
+<ol>
+<li><p>何为变量？何为对象？</p>
+
+<ul>
+<li><em>变量</em> 是一块 具名的、可供程序操作的 存储空间。</li>
+<li><em>对象</em> 也是一块 能存储数据并具有某种类型 的内存空间。</li>
+</ul>
+</li>
+<li><p>初始化 和 赋值操作 的区别：</p>
+
+<ul>
+<li>初始化 不是赋值，初始化指的是：在变量创建时为其赋予一个初始值，而赋值强调的则是：把一个对象的当前值擦除，并以一个新值进行替代！</li>
+</ul>
+</li>
+<li><p>关于 <strong>变量初始化</strong></p>
+
+<ul>
+<li>如果内置类型的变量定义时未被显式的初始化，那么它的初值将由其定义的位置决定：
+
+<ul>
+<li>定义在任何函数体之外，初始化为 0；</li>
+<li>定义在函数体内部，将不被初始化，初值为 undefined。<br/>
+此时如果试图拷贝或访问，将引发错误(error / bug)！</li>
+</ul>
+</li>
+</ul>
+
+
+<blockquote><p>定义于函数体内的内置类型的对象，如果没有初始化，则其值为未定义！<br/>
+用户自定义的 类的对象 如果没有显式地初始化，则其值由类本身来确定！</p></blockquote>
+
+<p> Tips: <font color="blue">建议在定义每一个内置类型的变量时，都对其进行显式的初始化，虽然并非必须这么做，但为了确保程序安全，这么做不失为一种简单且可靠的方法！</font></p></li>
+<li><p>C++ 为什么要将 声明 和 定义 区分开来？</p>
+
+<ul>
+<li>是为了要支持分离式编译，从而支持将程序拆分成多个逻辑部分来编写！</li>
+<li><strong>声明 (declaration)</strong>: 负责规定变量(或对象)的类型和名字； <br/>
+<strong>定义 (definition)</strong>: 除了声明变量之外，还需要为它申请存储空间，甚至是赋予一个初值！</li>
+<li>举例：C++ 声明变量：<code>extern int i;</code> 定义变量：<code>int i;</code>
+
+<blockquote><p>变量 只能被定义一次，但却可以被多次声明！</p></blockquote></li>
+</ul>
+</li>
+<li><p>C++ 是一种 静态类型 语言，这就要求我们在使用某个变量之前必须先声明其类型！</p>
+
+<ul>
+<li>静态类型语言的特点：在编译阶段就进行类型检查，编译器负责检查数据类型是否支持要执行的运算，如果试图执行其类型所不支持的运算，编译器就会报错！</li>
+</ul>
+</li>
+</ol>
+
+
+<h2></h2>
+
+<h4>2.3 复合类型 之 指针与引用</h4>
+
+<ol>
+<li><p>定义：复合类型(compound type) 是指 基于其他类型定义 的类型。比如：指针 与 引用 等。</p></li>
+<li><p>引用 (reference): 为对象起了另外一个名字，<code>引用即别名</code> 引用不是对象</p>
+
+<ul>
+<li>举例：</li>
+</ul>
+
+
+<pre><code> int a = 1024; 
+ int &amp;b = a; // ✅ b 是 a 的别名，引用变量 b 指向 a
+ int &amp;c; // ❌ 报错：引用必须被初始化（一定要指出是谁的别名）
+</code></pre>
+
+<blockquote><p>引用 必须以符号 <code>&amp;</code> 开头，而且引用只能绑定在对象上，而不能与字面值或某个表达式的计算结果绑定在一起！</p></blockquote></li>
+<li><p>指针</p>
+
+<ul>
+<li>指针本身就是一个对象，可以对其进行赋值和拷贝。</li>
+<li>切记：不要访问空指针和无效指针！</li>
+<li>解引用操作 <code>*</code> 仅仅适用于那些确实指向了某个对象的有效指针！</li>
+</ul>
+
+
+<blockquote><p>指针 定义必须以符号 <code>*</code> 开头，指针对象所存放的是“某个对象的地址”</p></blockquote></li>
+<li><p><code>void*</code> 指针</p>
+
+<ul>
+<li>这是一种特殊的指针类型，可用与存放任意类型对象的地址！</li>
+<li>它基本没啥用，因为我们并不知道它所指向的对象到底是什么类型，所以无法确定其操作！</li>
+</ul>
+</li>
+<li><p>总结：</p>
+
+<ul>
+<li><code>&amp;, *</code> 引用和指针 只被称作是<code>类型修饰符</code>，它其实只不过是变量声明符的一部分罢了，而不是<code>数据类型</code>本身。<br/>
+所以 <code>int* p1, p2; //定义的是：p1: int型的指针，p2则只是int类型而已！</code>
+正确写法：<code>int *p1, *p2;</code> 或者是 <code>int* p1; int* p2;</code></li>
+<li>类型修饰符可以级联，表示 指针的指针 或者是 引用的引用。
+
+<ul>
+<li><strong>指针的指针</strong>：<code>int **p;</code></li>
+<li><strong>指针的引用</strong>：<code>int *p; int* &amp;r = p;</code></li>
+<li>不可以出现引用的指针：因为引用本身不是对象！</li>
+<li>不可以出现引用的引用：因为引用本身不是对象！</li>
+</ul>
+</li>
+</ul>
+
+
+<blockquote><p>要理解 r 的类型到底是什么，一个最简单的方法就是：从右向左阅读 r 的定义！<br/>
+面对一条比较复杂的指针或引用的声明语句时，从右向左阅读 有助于弄清楚它的真实含义！</p></blockquote></li>
+</ol>
+
+
+<h2></h2>
+
+<h4>2.4 const 限定符 定义及其作用域</h4>
+
+<ol>
+<li><p>const 限定符出现的初衷</p>
+
+<ul>
+<li>希望定义一个变量，又不希望该变量的值被改变！(用 <code>const</code> 来修饰，声明其为常量)</li>
+<li><code>const</code> 对象一旦创建后，其值将不被允许再改变，所以它必须初始化！</li>
+<li>其实这真的就是一个限定符，限定了原数据类型上的一些写操作，另其<code>只能读不能写</code>！</li>
+</ul>
+</li>
+<li><p>const 对象的作用域问题</p>
+
+<ul>
+<li>默认情况下，const 对象仅在当前定义的文件内有效，其他文件内无效！</li>
+<li>如果想在多个文件之间共享 const 对象，则必须在该const变量的定义和声明之前都添加 <code>extern</code> 关键字！</li>
+</ul>
+
+
+<pre><code> // file1.cpp, 用 extern修饰 变量定义 说明会被其他文件共享
+ extern const int bufSize = 512;
+ // file2.cpp
+ extern const int bufSize;
+</code></pre></li>
+<li><p>对 const常量 的引用</p>
+
+<ul>
+<li>不要试图让一个非常量引用 指向 一个常量对象！</li>
+</ul>
+
+
+<pre><code> const int bufSize = 1024;
+ const int &amp;r1 = bufSize; // ✅
+ int &amp;r2 = bufSize; // ❌ 不能让非常量引用指向一个常量对象
+ r1 = 1025; // ❌ 不能通过常量引用来试图修改 const常量的值
+</code></pre>
+
+<ul>
+<li>const常量引用 的初始化，可以用任意类型的表达式！</li>
+</ul>
+
+
+<pre><code> int i = 42;
+ double d = 3.14;
+ const int &amp;r1 = i; // ✅ 这里 const 其实是想表达 约束 r1上的操作
+ const int &amp;r2 = 42; // ✅ 用 const 修饰则不允许对其进行修改
+ const int &amp;r3 = r1*2; // ✅ 只允许通过 r1, r2, r3, r4 来读取数值
+ const int &amp;r4 = d; // ✅ 所以这里不在意右边是什么类型的对象
+ int &amp;r5 = r1; // ❌ 这里 r5 是非常量引用，不允许类型不一致
+</code></pre></li>
+<li><p>对 const常量 的指针[<strong>底层const</strong>] vs. 常量指针(int *const ptr = &a;)[<strong>顶层const</strong>]</p>
+
+<ul>
+<li>Rule-1: 不要试图用 指向const常量的指针 来修改该常量的值！</li>
+<li>Rule-2: 不要试图让 一个非常量的指针 指向一个常量对象！</li>
+</ul>
+
+
+<pre><code> const double pi = 3.14;
+ const double *ptr1 = &amp;pi; // ✅ 指向常量的 指针
+ double *ptr2 = &amp;pi; // ❌ Rule-2
+ *ptr1 = 6.28; // ❌ Rule-1
+
+ double db = 1.23;
+ double *const ptr = &amp;db; // ✅ 指向普通变量的 常量指针
+</code></pre>
+
+<ul>
+<li>const常量指针 的初始化，也可以用任意类型的表达式！(参考 const常量 引用)</li>
+</ul>
+
+
+<blockquote><p>注意区分：指向常量的指针(<strong>int *ptr</strong>) vs. 常量指针 (<strong>int *const ptr</strong>)<br/>
+因为指针本身也是一个对象，所以这个对象本身也可定义为const，从而形成 常量指针 的概念!</p></blockquote></li>
+<li><p>C++11 新增：常量表达式 (const expression)类型 [<strong><code>constexpr</code></strong>类型]</p>
+
+<ul>
+<li>定义：是指 值不会改变(const) 且 在编译阶段就能得到计算结果 的表达式！</li>
+</ul>
+
+
+<pre><code> // C++ 11 新特性, 允许定义 constexpr类型 
+ // 以便 编译器 来验证变量是否是一个常量表达式
+ constexpr int test_const_expr = 2048; 
+</code></pre>
+
+<blockquote><p>注意：1. 声明为 <code>constexpr</code> 类型的变量一定要是一个常量 并且 必须用一个常量表达式进行初始化！<br/>
+2. 一般来说，如果你认定变量是一个常量表达式，那么就把它直接将其声明为 <code>constexpr</code>类型！让编译器帮你检查一下！</p></blockquote></li>
+</ol>
+
+
+<h2></h2>
+
+<h4>2.5 对类型的处理</h4>
+
+<ol>
+<li><p>别名处理：定义 <code>类型别名</code> 的两种方法：</p>
+
+<ul>
+<li>法一：使用 <strong>typedef</strong> 关键字<br/>
+<code>typedef double base, *dbptr; // base 等价于 double, dbptr 等价于 double*</code></li>
+<li>法二：使用 <strong>using</strong> 关键字 [C++11 新特性]
+<code>using SI = Sales_item; // SI 等价于 Sales_item</code></li>
+</ul>
+</li>
+<li><p><code>auto</code> 类型说明符 [C++11 新特性]</p>
+
+<ul>
+<li><code>auto</code> 类型说明符目的是：用它来让编译器替我们分析一个表达式到底是什么类型，而不需我们自己人为分析和指定类型。</li>
+<li>注意：用 <code>auto</code>定义的变量必须赋予初始值！</li>
+</ul>
+</li>
+<li><p><code>decltype</code> 类型指示符 [C++11 新特性]</p></li>
+</ol>
+
+
+<h2></h2>
+
+<h4>2.6 自定义数据结构</h4>
+
+<ol>
+<li><p>如前所述，我们可以这样理解“数据结构”：</p>
+
+<ul>
+<li><strong>数据结构</strong> 就是把一组相关的数据元素组织起来，然后使用它们的策略和方法。</li>
+<li><strong>数据结构</strong> 是 <strong>数据</strong> 及 其上所允许的<strong>操作</strong> 的一种逻辑组合。</li>
+</ul>
+</li>
+<li><p>头文件的编写 与 程序的预处理</p>
+
+<ul>
+<li>为了防止 头文件 被重复包含，C++程序会用到一项预处理的功能：头文件保护符！</li>
+</ul>
+
+
+<pre><code> #ifndef HEADER_H
+ #define HEADER_H
+ ...
+ #endif
+</code></pre></li>
+</ol>
+
+
+<h2></h2>
+
+<p>END <a href="../part1-foundation.html">Back</a></p>
+
+<h2></h2>
+</body>
+</html>

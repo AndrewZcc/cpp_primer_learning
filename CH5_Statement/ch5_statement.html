@@ -1,0 +1,494 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>CH5 语句</title>
+
+</head>
+<body>
+<h3>CH5 语句</h3>
+
+<h2></h2>
+
+<blockquote><ul>
+<li>本章致力于介绍：C++所提供的 一组控制流(flow-of-control)语句 以支持复杂的执行路径！</li>
+<li>本章介绍的主要包括：简单语句，复合语句(语句块)，条件语句，循环语句，跳转语句，异常处理机制 等。</li>
+</ul>
+</blockquote>
+
+<h2></h2>
+
+<h4>5.1 简单语句</h4>
+
+<ol>
+<li>注意：别漏写分号，也别多写分号；</li>
+<li>用一对花括号括起来的语句，被称作语句块，也就是所谓的 <code>复合语句</code>，我们可以把 <code>复合语句</code>看做是一条语句，但是这条语句并不需要以分号作为结束。</li>
+</ol>
+
+
+<h4>5.2 语句的作用域</h4>
+
+<ul>
+<li>在控制结构内的语句块内定义的变量，只能在该语句块内可见！一旦该复合语句结束(也即程序运行到了代码块外)，该变量也就失效了。</li>
+</ul>
+
+
+<h4>5.3 条件语句</h4>
+
+<ol>
+<li><p><code>if</code> 条件语句</p>
+
+<ul>
+<li><p>经典问题：<code>悬垂 else 问题</code> 当 if 分支 多于 else 分支 时，我们怎么知道某个给定的 else 到底是和哪个 if 语句匹配呢？</p>
+
+<ul>
+<li>解决方案：<font color="red">就 C++ 而言，它规定 else 与离它最近的尚未匹配的 if 匹配，从而消除了程序的二义性</font>！</li>
+</ul>
+</li>
+<li><p>为了解决 if-else 分支匹配不正确的问题，<font color="blue">强烈建议：程序员将所有 if 和 else 分支下的语句都用花括号括起来</font>！也即：<strong>使用花括号来控制执行路径，避免出现执行路径的错误</strong>。</p></li>
+</ul>
+</li>
+<li><p><code>switch</code> 条件语句</p>
+
+<ul>
+<li><p>注意：<code>case 标签 必须是整型常量表达式</code>，switch 语句只能处理整型的匹配！</p></li>
+<li><p>❗️<strong>要特别注意 switch内部的控制流</strong>：</p>
+
+<ul>
+<li>如果某个 case标签 匹配成功，将从该标签开始往后顺序执行所有的 case分支，除非程序显式地中断了这一过程，否则 运行直到switch的结尾处才会停下来！</li>
+<li><font color="red">一般不要省略 case分支 最后的break语句，如果没写break语句，最好要加一段注释 来说明程序的执行逻辑！</font></li>
+<li>因为 <code>漏写 break语句 容易引发重大软件缺陷</code>！</li>
+</ul>
+</li>
+<li><p>注意 switch语句内部的变量定义 问题：“如果被略过的代码中含有 变量的定义 该肿么办？”</p>
+
+<ul>
+<li>答案是：<font color="blue">C++规定，不允许 跨过变量的初始化语句直接跳转到该变量作用域内的其他另一位置</font>！</li>
+<li>也即：如果在某处一个 带有初值的变量 位于作用域外，另一处 该变量位于作用域内，则从前一处跳转到后一处的行为是<strong>非法</strong>的！</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<h4>5.4 循环语句</h4>
+
+<ol>
+<li><p><code>while</code> 循环</p>
+
+<ul>
+<li>形式：<code>while (condition) statement</code>。</li>
+<li>当我们不确定到底要迭代多少次时，使用 while 循环 就比较合适！</li>
+</ul>
+</li>
+<li><p><code>传统 for</code> 循环</p>
+
+<ul>
+<li>形式：<code>for (init-statement; condition; expression) statement</code>。</li>
+<li>注意：如果 condition 的第一次求值结果就是 <code>false</code>, 则 statement 就一次也不会被执行！</li>
+</ul>
+</li>
+<li><p><code>范围 for</code> 循环</p>
+
+<ul>
+<li>形式：<code>for (declaration : expression) statement</code>。</li>
+<li>注意：其中 expression 必须是一个序列。</li>
+<li>技巧：declaration 部分必须要确保与expression里的元素类型一致，<code>确保类型一致</code>最简单的方法就是：<font color="red">使用 <code>auto</code> 类型说明符，让编译器帮我们去指定正确的类型</font>！</li>
+</ul>
+</li>
+<li><p><code>do while</code> 循环</p>
+
+<ul>
+<li><code>do while</code> 与 <code>while</code> 唯一的区别就在于：其先执行循环体，后检查条件！</li>
+<li>注意另一个重要的区别：<font color="red">do while 语句要在结束位置使用一个分号作为结尾</font>！</li>
+</ul>
+</li>
+</ol>
+
+
+<h4>5.5 跳转语句 (用于中断当前控制流)</h4>
+
+<ol>
+<li><p>跳转语句的作用是：中断当前的执行过程！</p></li>
+<li><p><code>break</code> 语句</p>
+
+<ul>
+<li>break 语句 只能出现在 迭代语句 或 switch语句 内部，它的作用也仅限于：离他最近的循环或者是switch。</li>
+</ul>
+</li>
+<li><p><code>continue</code> 语句</p>
+
+<ul>
+<li>作用是：终止最近的循环中的当前迭代，并立即开始下一次迭代！</li>
+</ul>
+</li>
+<li><p><code>goto</code> 语句</p>
+
+<ul>
+<li>建议：虽然 C++语言中支持<code>goto 语句</code> (无条件跳转)，<strong>但请不要在程序中使用它，因为它使得程序既难以理解又难以修改</strong>！</li>
+</ul>
+</li>
+<li><p><code>return</code> 语句【详见 6.3】</p></li>
+</ol>
+
+
+<h4>5.6 try 语句 与 异常处理</h4>
+
+<ol>
+<li><p>异常是指存在于运行时的反常行为！C++ 提供 <code>throw 表达式，try 语句块，一套异常类</code> 用来处理异常。</p></li>
+<li><p><code>throw</code> 表达式</p>
+
+<ul>
+<li>结合 异常类，抛出异常信息。</li>
+</ul>
+
+
+<pre><code> if (item1.isbn() != item2.isbn())
+     throw runtime_error("Data must refer to same ISBN.");
+</code></pre></li>
+<li><p><code>try</code> 语句块</p>
+
+<ul>
+<li>用法：</li>
+</ul>
+
+
+<pre><code> int x;
+ try {
+     // program-statements
+     x = 2;
+     int y = 3;
+     throw exception;
+ } catch (exception-declaration){
+     // handler-statements
+     cout &lt;&lt; x &lt;&lt; endl;  // ✅
+     cout &lt;&lt; y &lt;&lt; endl;  // ❌
+ } catch (exception-decla2) {
+     handler-statements
+ } ...
+
+ cout &lt;&lt; x &lt;&lt; endl;      // ✅
+ cout &lt;&lt; y &lt;&lt; endl;      // ❌
+</code></pre>
+
+<ul>
+<li>特别注意：<em>try 语句块内声明的变量在块外部是无法访问的，而且甚至是在 catch子句内也无法访问</em>。</li>
+</ul>
+</li>
+<li><p><code>标准库 异常类 #include &lt;exception&gt;</code></p>
+
+<ul>
+<li>每个标准异常类 都定义了名为 what() 的成员函数，这些函数没有参数，返回的则是C风格字符串。</li>
+</ul>
+</li>
+</ol>
+
+
+<h2></h2>
+
+<p>END <a href="../part1-foundation.html">Back</a></p>
+
+<h2></h2>
+</body>
+</html>

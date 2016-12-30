@@ -1,0 +1,534 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>CH6 函数</title>
+
+</head>
+<body>
+<h3>CH6 函数</h3>
+
+<h2></h2>
+
+<blockquote><p>函数 用于 <font color="blue">让用户可以定义可供随时调用的计算单元！</font><br/>
+函数 是命过名的计算单元，它对程序的结构化至关重要！</p>
+
+<h2></h2></blockquote>
+
+<h4>6.1 函数基础</h4>
+
+<ol>
+<li><p>函数的四大组成部分：<em>返回类型，函数名，形参列表，函数体</em>。<br/>
+我们通过 调用运算符(call operator) 来执行函数。</p></li>
+<li><p>函数调用 完成的两项任务：</p>
+
+<ul>
+<li>T1: 用 实参列表 初始化函数对应的 形参；</li>
+<li>T2: 将 程序执行控制权 转移给被调用函数 (将 程序控制权 下放)！</li>
+</ul>
+</li>
+<li><p>函数返回(return) 的两项任务：</p>
+
+<ul>
+<li>T1: 将该函数的执行结果 返回出去；</li>
+<li>T2: 将 程序执行控制权 从被调函数转移回主调函数 (交还 程序控制权)。</li>
+</ul>
+</li>
+<li><p>实参 是 形参 的初始值。注意：<font color="red">函数返回值不能是 数组 或 函数，但可以是指向数组的指针(或引用)，或 指向函数的指针。</font></p></li>
+<li><p>局部变量 与 局部对象</p>
+
+<ul>
+<li>局部变量：形参和函数体内部定义的变量统称为 局部变量；</li>
+<li>局部自动对象：只存在于块执行期间的对象 被称为 自动对象，当块执行结束后，块中的自动对象就被销毁了；</li>
+<li>局部静态对象：<code>将局部变量定义成 static 静态类型</code>，这样该局部变量就会在函数调用之后也可以继续被访问，没有变销毁！</li>
+</ul>
+</li>
+<li><p>函数声明 与 分离式编译，</p>
+
+<ul>
+<li>函数声明又被称作是“函数原型 (function prototype)”</li>
+<li>举例：<code>int add(int a, int b);</code> 声明一个函数，而没有定义。</li>
+</ul>
+</li>
+</ol>
+
+
+<h2></h2>
+
+<h4>6.2 参数传递</h4>
+
+<ol>
+<li><p>可分为：<code>引用传递</code> 与 <code>值传递</code>。</p>
+
+<ul>
+<li><p>把参数设为指针 本质上也是在做 <code>值传递</code>，但是它也可以通过指针来间接地修改对象；</p></li>
+<li><p>❗️注意：<font color="red">熟悉C的程序员 常常使用指针类型的形参来访问函数外部的对象，但在 C++语言 中，我们建议 使用 引用类型的形参来替代指针！</font> 也即：使用<code>引用传递</code>来达到修改函数外的变量的值的目的。</p></li>
+<li><p>使用<code>引用传递</code>的几大好处是</p>
+
+<ul>
+<li>它能避免拷贝，记住：拷贝 大的类类型对象或容器对象 有时是很低效的！</li>
+<li>可以通过引用传参帮助我们 获取 更多地函数返回信息。(可以做到<strong>让函数返回多个值的效果</strong>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>⭐️ <strong>数组形参</strong></p>
+
+<ul>
+<li><p>❗️注意：<font color="blue">数组的两个特殊形状：1. 不允许拷贝数组；2. 使用数组时它会被转换成指针！</font> 所以我们无法以<code>值传递</code>的方式使用数组作为参数，也无法将数组名作为函数参数，因为这样实际传递过去的 <strong>不是数组而是 指向数组首元素的指针</strong>。</p></li>
+<li><p>在C++中：数组是以指针的形式传递给函数的！所以函数一开始并不知道数组的确切尺寸！管理指针形参的三种技术：</p>
+
+<ul>
+<li>在数组的结束为止人为指定标记；</li>
+<li>使用标准库 begin(),end() 为数组参数提供收尾元素的指针；</li>
+<li>直接显式的传递一个表示数组大小的形参！(最直接，所以用的也最广！)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>实例 <code>main() 函数</code> 的参数传递</p>
+
+<ul>
+<li><code>int main(int argc, char* argv[]) {}</code></li>
+<li><code>int main(int argc, char **argv) {}</code></li>
+</ul>
+
+
+<p> 在这里 <code>argv</code> 就是一个 指向char*的数组形参！</p></li>
+<li><p>思考：如何处理 可变形参 的函数（我们并不确切的知道这个函数到底会有几个参数）</p>
+
+<ul>
+<li>C++ 提供了三种解决方案
+
+<ul>
+<li><code>initializer_list</code> 形参：只能传递常量值。</li>
+<li><code>可变参数模板</code> 形参：详见 <a href="../CH16">16.4</a> 。</li>
+<li><code>省略符</code> 形参：仅仅用于C和C++通用类型，一般只用于写与C函数交互的接口程序！</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<h4>6.3 返回类型 和 return 语句</h4>
+
+<ol>
+<li><p>❗️注意：<font color="red">不要返回 局部对象 的引用或指针！</font>这是因为当函数完成后，该局部对象所占的存储空间就被释放掉了，因此：它的引用或是指针，都指向了不再有效的内存区域，从而发生未定义的错误！</p></li>
+<li><p>Q: 函数返回值 一定是右值吗？<br/>
+A: ❌，返回值也可能是左值(变量表达式)，当一个函数的返回值类型为<code>引用</code>的时候，它所得到的就是左值，而其他类型的函数得到的返回值则是右值！</p></li>
+<li><p>⭐️ <strong>Q: 函数 如何返回一个 数组？</strong></p>
+
+<ul>
+<li><p>因为数组本身不能被拷贝，所以函数无法直接返回一个数组；</p></li>
+<li><p>不过 函数可以返回数组的 指针或引用！(技巧:使用<code>类型别名</code>来简化返回数组指针/数组引用的任务)</p></li>
+<li><p>返回 <strong>数组指针</strong> 的函数定义 原型应为：<code>Type (*function(parameter_list))[Dimension];</code><br/>
+a1. 举例：<code>int (*func(int i))[10] {...}</code><br/>
+b2. 为了简化这种复杂的形式，C++ 11 新标准提供了 <code>尾置返回类型</code> 的函数声明法！举例：<code>auto func(int i) -&gt; int(*)[10] {...}</code></p></li>
+</ul>
+</li>
+</ol>
+
+
+<h2></h2>
+
+<h4>6.4 函数重载</h4>
+
+<ol>
+<li><p><code>重载函数</code> 定义：同一作用域内 几个函数名相同但形参列表不同 的函数，相互之间互称 “重载函数”。</p>
+
+<ul>
+<li>注意：❌ 不允许两个函数除了返回类型外其他所有要素都相同！也就是说：如果两个函数，它们的函数名相同 且 形参列表相同，<font color="blue">只有返回类型不同，则这两个函数声明式不被允许的，是错误的</font>！</li>
+</ul>
+</li>
+<li><p>🤔思考：当多个重载函数参数数量相同且参数类型可以相互转换时，编译器到底怎么选择呢？</p>
+
+<ul>
+<li>答案是：编译器 尝试先去找<code>与实参最匹配</code>的函数；如果一个都找不到，此时编译器就会报错：<code>无匹配</code>错误；如果找到多个可以匹配的，但每一个有都不是明显的最佳选择，编译器也会报错：<code>二义性调用</code>错误！</li>
+</ul>
+</li>
+</ol>
+
+
+<h4>6.5 三种函数相关的语言特性</h4>
+
+<ol>
+<li><p>默认实参</p>
+
+<ul>
+<li>❗️记住：<font color="red">一旦某个形参被赋予了默认值，那么它后面的所有形参都必须有默认值</font>！</li>
+<li>设计带有 默认实参 的函数时，其中一项任务就是：要合理地<strong>设置形参的顺序</strong>！</li>
+</ul>
+
+
+<pre><code> string screen(int x, int y, char z);                // ✅
+ string screen(int x, int y = 10, char z);           // ❌ 默认实参右边的所有形参必须也全部都要有默认实参！
+ string screen(int x, int y = 10, char z = 'a');     // ✅ 
+ string screen(int x, int y = 10, char z = 'b');     // ❌ 重复声明
+</code></pre></li>
+<li><p>内联函数 和 <code>constexpr</code>函数</p>
+
+<ul>
+<li><p>内联函数 是在函数定义的返回类型前面加上关键字<code>inline</code>，这样就算把这个函数声明成为内联函数了。</p>
+
+<ul>
+<li>注意：内联说明只是向编译器发出一个请求，但是编译器也可以忽略这个请求。</li>
+</ul>
+
+
+<blockquote><p>内联函数：可以避免常见的函数调用开销。</p></blockquote></li>
+<li><p>❗️内联函数 目的在于：优化 规模较小，流程直接 且 频繁调用 的函数！它<strong>直接在函数调用点“内联地”展开</strong>，而不需要像普通函数调用那样真的去利用堆栈和寄存器来存储程序状态再调用函数。</p></li>
+</ul>
+</li>
+</ol>
+
+
+<h4>6.6 函数匹配</h4>
+
+<ol>
+<li>🤔 思考：当几个重载函数的形参数量相等 且 某些形参类型可以相互转换时，如何匹配函数呢？
+
+<ul>
+<li>a1. 首先确定<code>候选函数</code>集 和 <code>可行函数</code>集；</li>
+<li>a2. 接着在 <code>可行函数</code>集 中寻找<code>最佳匹配函数</code>(原则：实参类型与形参类型越接近，它们匹配的就越好)；</li>
+<li>a3. 如果找不到<code>最佳匹配</code>且检查了所有实参之后发现没有一个函数能脱颖而出，则该次调用错误！编译器报告 二义性调用错误 的信息！</li>
+</ul>
+</li>
+</ol>
+
+
+<h4>6.7 函数指针</h4>
+
+<ol>
+<li><p>⭐️ <strong>函数指针</strong> 指向的是函数而非对象！</p>
+
+<ul>
+<li>举例:</li>
+</ul>
+
+
+<pre><code> bool lengthCompare(const string&amp;, const string&amp;);   // 声明了一个 普通函数
+ bool (*pf)(const string&amp;, const string&amp;);           // 声明了一个 指向函数的 函数指针
+ bool *pfunc(const string&amp;, const string&amp;);              // 声明了一个 函数名为pfunc,返回类型为 bool* 的函数
+
+ /*为函数指针赋值*/
+ pf = lengthCompare;     // 将函数指针 pf 指向 lengthCompare 函数（这里函数名会自动转换为指针）
+ pf = &amp;lengthCompare;    // 这样也可以，上下两句是等价的！
+ /*使用函数指针*/
+ bool b1 = pf("hello", “world”);
+ bool b2 = (*pf)("hello", “world”);
+ bool b3 = lengthCompare("hello", “world”); // 这三条语句等价
+</code></pre></li>
+<li><p>函数作为形参，实际上用的是指向该函数的函数指针（这点类似数组）</p></li>
+</ol>
+
+
+<blockquote><p>函数指针的定义和使用，可参见 6.7 节的练习题。</p></blockquote>
+
+<h2></h2>
+
+<p>END <a href="../part1-foundation.html">Back</a></p>
+
+<h2></h2>
+</body>
+</html>
