@@ -1,0 +1,489 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>CH7 类</title>
+
+</head>
+<body>
+<h3>CH7 类</h3>
+
+<h2></h2>
+
+<blockquote><p>类 允许用户定义属于自己的数据类型！<br/>
+类 的基本思想是：<strong>数据抽象</strong>(能定义数据成员和函数成员) 和 <strong>封装</strong>(能保护类成员不被随意访问)。</p>
+
+<h2></h2></blockquote>
+
+<h4>7.1 定义 抽象数据类型</h4>
+
+<blockquote><p><code>抽象数据类型(ADT)</code>定义：是指那些封装了具体实现细节的数据结构！<br/>
+数据抽象的作用是：能帮助我们把 对象的具体实现 与 对象所能执行的操作 分离开来。</p></blockquote>
+
+<ol>
+<li><p>类 与 结构体 的重要区别</p>
+
+<ul>
+<li>类 对自己的数据成员实现了封装，外部无法访问类对象的数据成员；而 结构体 则直接把数据成员展现给用户，让用户自己去访问和使用这些成员。</li>
+</ul>
+</li>
+<li><p><strong>类设计(接口的设计)也需要站在用户的角度来考虑</strong>，也就是说：当我们设计类的接口时，应该考虑如何才能使得类变得易于使用；而当我们使用类时，就不再应该考虑具体的实现细节。</p>
+
+<ul>
+<li>类 的成员函数 声明必须在类的内部，定义则既可在内的内部，也可在类的外部。</li>
+</ul>
+</li>
+<li><p><code>构造函数</code> 的作用：初始化对象的数据成员！无论何时只要类的对象被创建，就会执行构造函数！</p>
+
+<ul>
+<li>构造函数 控制类对象的初始化过程！</li>
+<li>C++11 新标准中，引入<code>default</code>关键字来要求编译器生成默认构造函数！</li>
+</ul>
+
+
+<pre><code> struct Sales_data {
+     Sales_data() = default;         // ✅ 编译器会生成 默认构造函数；
+     Sales_data(const string&amp; s) {}  // 又一个用户自定义的构造函数。
+ }
+</code></pre></li>
+<li><p>❗️关于C++中的<code>动态内存</code>，使用标准库中的 <code>vector</code>和<code>string</code>对象帮助我们来管理存储空间，能有效地降低很多分配和释放内存所带来的复杂性。</p></li>
+</ol>
+
+
+<h4>7.2 访问控制 与 封装</h4>
+
+<ol>
+<li><p>为什么C++要提出类的概念？</p>
+
+<ul>
+<li><p>类的设计者可以通过<code>访问说明符</code>(<strong>public, private</strong>)对类进行封装，这一点 结构体 就做不到！</p></li>
+<li><p><font color="red">使用 class 和 struct 定义类唯一的区别就是 <em>默认的访问权限</em></font>！(class 默认访问权限是 private，而 struct 默认访问权限则是 public)。</p></li>
+</ul>
+</li>
+<li><p><strong>友元</strong> 的作用 <a href="./class_try.h">source_code</a></p>
+
+<ul>
+<li>类可以允许 其他类或者函数访问 它的非公有成员(private/protected)，方法就是：将其(类或函数)申明成为它的友元 [加上一条以 friend 关键字开始的函数声明即可]。</li>
+</ul>
+
+
+<pre><code> // 声明 友元函数
+ class Sales_data {
+     friend int multiply(Sales_data s);
+     ...
+ };
+ // 声明 友元类
+ class Screen {
+     friend class Window;
+     ...
+ };
+ class Window {
+     ...
+ };
+</code></pre>
+
+<ul>
+<li><p><strong>友元函数 和 友元类的成员函数 均可以访问此类的 包括非公有成员在内的所有成员</strong>！（这就是友元最大的作用）</p></li>
+<li><p>注意：友元声明的作用仅仅是影响访问权限，而其本身并不能代替普通意义上的函数或类声明。也就是说：如果你仅仅进行了友元声明而没有真正的声明一个函数，那么在这个函数被真正声明前，它仍不可被调用。</p></li>
+<li><p>❗️另外注意：友元关系不具有传递性，每个类必须负责控制自己的友元类和友元函数。</p></li>
+</ul>
+</li>
+</ol>
+
+
+<h4>7.3 类的 其他特性</h4>
+
+<ol>
+<li><p>类类型：要求每个类定义唯一的类型。</p>
+
+<ul>
+<li>这里请注意：即使两个类的成员列表完全一致，它们也属于不同的类型！</li>
+</ul>
+</li>
+<li><p>对一个类来说，在我们创建它的对象之前<strong>该类必须被定义过</strong>，而不能仅仅只是被声明！</p></li>
+</ol>
+
+
+<h4>7.4 类的 作用域</h4>
+
+<ul>
+<li>一个类 就是 一个作用域：这个事实很好的解释了为什么我们在类的外部定义成员函数时必须同时提供类名作用域 和 函数名！在<strong>类的外部，成员的名字已经被隐藏起来</strong>了！</li>
+</ul>
+
+
+<h4>7.5 构造函数 再探</h4>
+
+<ol>
+<li><p>❗️思考 <strong><code>构造函数初始值列表</code></strong> 与 <code>构造函数的赋值初始化</code> 之间的区别：</p>
+
+<pre><code> class ConstRef {
+     private:
+         int i;
+         const int coni;
+         int &amp;refi;
+     public:
+         ConstRef(int a);
+ }
+ // 赋值初始化（本质上是：先执行默认初始化，之后再赋值）
+ ConstRef::ConstRef(int a) {     // ❌
+     i = a;      // ✅
+     coni = a;   // ❌
+     refi = i;   // ❌
+ }
+ // 构造函数初始值列表 (本质上是：直接初始化数据成员)
+ ConstRef::ConstRef(int a) : i(a), coni(a), refi(i) { }  // ✅  
+</code></pre>
+
+<ul>
+<li>注意：这里的成员是 const 和 引用(&amp;) 类型，它们必须通过 <code>构造函数初始值列表</code> 的方式提供初值，而无法通过 <code>赋值初始化</code> 的方式进行初始化。</li>
+<li>类内部成员的 <em>初始化顺序是：它们在类定义中所出现的顺序</em>，第一个定义的成员首先被初始化，然后才是第二个，以此类推。</li>
+</ul>
+</li>
+<li><p>关于默认构造函数，请注意：在实际中，如果定义了其他构造函数，那么最好也提供一个默认构造函数！</p></li>
+<li><p>C++ <code>explicit</code>关键字</p>
+
+<ul>
+<li><p>按 C++ 默认规定，只传一个参数的构造函数默认也定义了一个 隐式类类型的转换函数！通过将构造函数声明为<code>explicit</code>，我们就可以抑制这种隐式转换，也就是说：<font color="red">explicit构造函数必须被显式调用</font>！</p></li>
+<li><p>发生隐式的构造函数调用(隐式的类型转换)，经常会给程序带来逻辑错误，而且这种错误一旦发生很难觉察，所以原则上：应该在所有的构造函数前面都加上 explicit 关键字，但 C++多个实参的构造函数本身就不能用于执行隐式转换，所以它们就无需声明为 explicit。</p></li>
+</ul>
+
+
+<blockquote><p>explicit 关键字只能出现在类内部的声明语句中</p></blockquote></li>
+<li><p>什么是 C++中的 <strong>聚合类</strong> (定义：只含有公有成员的类，并具有其他几个特征)</p>
+
+<ul>
+<li>聚合类：用户 可直接访问其成员的 具有特殊初始化语法形式 的类。</li>
+<li>其他特征：所有成员都是 public，没有构造函数，没有类内初始值，没有基类，没有虚函数！</li>
+</ul>
+</li>
+</ol>
+
+
+<h4>7.6 类的 静态成员 (<code>static</code>成员)</h4>
+
+<ol>
+<li><p>静态成员：是与类本身直接相关，而不是与类的各个对象保持关联的类数据成员。</p>
+
+<ul>
+<li>类 的静态成员：<strong>独立于任何对象之外</strong>，对象不包含静态数据成员有关的数据！类的静态成员被所有对象所<strong>共享</strong>！</li>
+</ul>
+
+
+<blockquote><p>static 关键字也只能出现在类内部的声明语句中</p></blockquote></li>
+<li><p>静态成员 与 普通成员 的区别</p>
+
+<ul>
+<li>静态成员 与类本身直接相关，独立于类的各个对象，存在于任何对象之外；</li>
+<li>我们可以用静态成员作为 默认实参(右值)，而普通成员不行(左值)。</li>
+</ul>
+</li>
+</ol>
+
+
+<h2></h2>
+
+<p>END <a href="../part1-foundation.html">Back</a></p>
+
+<h2></h2>
+</body>
+</html>
